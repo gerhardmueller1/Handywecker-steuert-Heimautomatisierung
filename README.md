@@ -7,6 +7,10 @@ wie die Frage beantwortet kann.
 
 Hier nur eine Variante davon...
 
+### Links
+
+* [Sleep as Android](https://sleep.urbandroid.org/)
+
 ## Hintergrund
 
 In meiner Heimautomatisierung habe ich diverse Routinen eingerichtet um das morgentliche Aufstehen zu versüßen. Einschalten des Radios
@@ -61,3 +65,42 @@ Als Zweites muss mein "Wecker" dann dem HomeAssistant nochsagen, dass "es klinge
 ![Konfiguration MQTT 1](SleepAsAndroid-Config1.png)
 ![Konfiguration MQTT 2](SleepAsAndroid-Config2.png)
 ![Konfiguration MQTT 3](SleepAsAndroid-Config3.png)
+
+Im MQTT Broker habe ich natürtlich noch einen eigenen Account hierfür eingerichtet.
+
+### Homeassistant Konfiguration
+
+Auf der Seite <https://docs.sleep.urbandroid.org/services/automation.html#events> sind alle Events beschrieben, so dass hiermit die Automaitisuerungen
+angestossen werden können. Der wichtigste Event ist -für mich- *alarm_alert_start*.
+
+Hierzu wird in der `configuration.yaml` folgendes ergänzt:
+
+```
+mqtt:
+  sensor:
+    - name: "SleepAsAndroid"
+      state_topic: "SleepAsAndroid"
+      value_template: "{{value_json.event}}"
+
+```
+
+Womit ich eine Entität habe, deren Zustand ich einfach abfragen kann (klar, ich kann auch MQTT Auslöser definieren, aber so hat's mir besser gefallen,
+da ich somit auch eine Historie im HA habe)
+
+```
+alias: Wenn Handy klingelt schalte Radio ein
+description: ""
+trigger:
+
+* platform: state
+    entity_id:
+  * sensor.sleepasandroid
+    to: alarm_alert_start
+condition: []
+action:
+* service: media_player.turn_on
+    data: {}
+    target:
+      device_id: bb8e4072437648e647e2210dfd6cd4e4
+mode: single
+```
