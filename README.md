@@ -60,7 +60,7 @@ nichts gebracht, deinstallieren der *Uhr* ging nicht.
 
 ### SleepAsAndroid informiert Homeassistant
 
-Als Zweites muss mein "Wecker" dann dem HomeAssistant nochsagen, dass "es klingelt". SleepAsAndroid hat einen eingebauten MQTT Client .... praktisch!
+Als Zweites muss mein "Wecker" dann dem HomeAssistant noch sagen, dass "es klingelt". SleepAsAndroid hat einen eingebauten MQTT Client .... praktisch!
 
 ![Konfiguration MQTT 1](SleepAsAndroid-Config1.png)
 ![Konfiguration MQTT 2](SleepAsAndroid-Config2.png)
