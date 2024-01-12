@@ -85,7 +85,8 @@ mqtt:
 ```
 
 Womit ich eine Entität habe, deren Zustand ich einfach abfragen kann (klar, ich kann auch MQTT Auslöser definieren, aber so hat's mir besser gefallen,
-da ich somit auch eine Historie im HA habe)
+da ich somit auch eine Historie im HA habe: ![Alt text](SleepAsAndroid-Verlauf.png)
+)
 
 ```
 alias: Wenn Handy klingelt schalte Radio ein
