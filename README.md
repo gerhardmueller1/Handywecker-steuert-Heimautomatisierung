@@ -53,7 +53,7 @@ Wie schon beschrieben kann *Sleep as Android* beide geforderten Punkte umsetzen.
 
 Im regulären Setup wird der Assistant allerdings die *Uhr* als Wecker verwenden:
 
-![Screenshot Assistant nutzt Standard-App](Assistant-Wecker1.png)
+<img src="./Assistant-Wecker1.png" width="30%">
 
 Dieses Verhalten konnte ich nur abstellen, in dem ich **die *Uhr* dekativiert habe**. Sämtliche Android-Einstellungen (als Standardprogramm öffnen, etc) haben
 nichts gebracht, deinstallieren der *Uhr* ging nicht.
@@ -62,9 +62,7 @@ nichts gebracht, deinstallieren der *Uhr* ging nicht.
 
 Als Zweites muss mein "Wecker" dann dem HomeAssistant noch sagen, dass "es klingelt". SleepAsAndroid hat einen eingebauten MQTT Client .... praktisch!
 
-![Konfiguration MQTT 1](SleepAsAndroid-Config1.png)
-![Konfiguration MQTT 2](SleepAsAndroid-Config2.png)
-![Konfiguration MQTT 3](SleepAsAndroid-Config3.png)
+<img src="./SleepAsAndroid-Config1.png" width="30%"> <img src="./SleepAsAndroid-Config2.png" width="30%"> <img src="./SleepAsAndroid-Config3.png" width="30%">
 
 Im MQTT Broker habe ich natürtlich noch einen eigenen Account hierfür eingerichtet.
 
